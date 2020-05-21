@@ -6,7 +6,7 @@ var guia = angular.module('guia', [
    'ngRoute',
    'firebase',
    'authService',
-   'googleService'
+   // 'googleService'
 ]);
 
 guia.config(['$routeProvider', function ($routeProvider) {
