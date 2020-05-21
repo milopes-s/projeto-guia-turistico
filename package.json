@@ -12,10 +12,10 @@
     "angular": "^1.7.9",
     "angularfire": "^2.3.0",
     "bootstrap": "^4.4.1",
-    "firebase": "^7.14.4"
+    "firebase": "^7.14.4",
+    "grunt": "^1.1.0"
   },
   "devDependencies": {
-    "grunt": "^1.1.0",
     "grunt-bower-task": "^0.5.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.6.0",

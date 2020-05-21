@@ -5,3 +5,62 @@
 <div id="feed">
    <img src="../../assets/igm1.png" alt="GuiaVirtual">
 </div>
+<div class="teste">
+      <div ng-controller="MapController">
+          <input id="from" type="text" ng-model="user.from" placeholder="Type Address" class="ng-pristine ng-valid" autocomplete="off">
+          <input type="hidden" ng-model="user.fromLat">
+          <input type="hidden" ng-model="user.fromLng">
+              <p>{{user.from}} <br> {{'Latitude : ' + user.fromLat + ', Longitutde : ' + user.fromLng}}</p>
+      </div>
+</div>
+
+<head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+   <style type="text/css">
+     html { height: 100% }
+     body { height: 100%; margin: 0; padding: 0 }
+     #map_canvas { height: 100% }
+   </style>
+
+   <script>
+   var mapApp = angular.module('mapApp', []);
+
+   mapApp.controller('MapController', function ($scope) {
+    $scope.user = {'from': '', 'fromLat': '', 'fromLng' : ''};
+    var options = {
+        componentRestrictions: {country: "in"}
+    };
+    var inputFrom = document.getElementById('from');
+    var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom, options);
+    google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
+        var place = autocompleteFrom.getPlace();
+        $scope.user.fromLat = place.geometry.location.lat();
+        $scope.user.fromLng = place.geometry.location.lng();
+        $scope.user.from = place.formatted_address;
+        $scope.$apply();
+    });
+});
+   </script>
+
+
+
+   <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKzLuy2OuqRhpeFiNdjzrfi4tKmN9NRow&libraries=places">
+   </script>
+     
+   </script>
+   <script type="text/javascript">
+     function initialize() {
+       var mapOptions = {
+         center: new google.maps.LatLng(-16.1886947,-48.0239801,12),
+         zoom: 8,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+       };
+       var map = new google.maps.Map(document.getElementById("map_canvas"),
+           mapOptions);
+     }
+   </script>
+ </head>
+ <body onload="initialize()">
+   <div id="map_canvas" style="width:100%; height:100%"></div>
+ </body>
