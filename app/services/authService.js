@@ -11,7 +11,8 @@ angular.module('authService', ['ngRoute', 'firebase'])
             register: register,
             login: login,
             logout: logout,
-            isLoggedIn: isLoggedIn
+            isLoggedIn: isLoggedIn,
+            passReset: passReset
          };
 
          return service;
@@ -29,4 +30,10 @@ angular.module('authService', ['ngRoute', 'firebase'])
          function isLoggedIn() {
             return firebaseAuthObject.$getAuth();
          };
+         function passReset(user) {
+            var auth = firebase.auth()
+            var emailAdress = user.email
+
+            return auth.sendPasswordResetEmail(emailAdress)
+         }
       })
