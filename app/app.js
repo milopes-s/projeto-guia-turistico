@@ -5,8 +5,7 @@
 var guia = angular.module('guia', [
    'ngRoute',
    'firebase',
-   'authService',
-   // 'googleService'
+   'authService'
 ]);
 
 guia.config(['$routeProvider', function ($routeProvider) {
@@ -26,14 +25,15 @@ guia.config(['$routeProvider', function ($routeProvider) {
          controller: 'cadCtrl'
 
       })
+      //configs
       .when('/config', {
-         templateUrl: './app/templates/cadastro.html',
+         templateUrl: './app/templates/config.html',
          controller: 'configCtrl'
 
       })
       .when('/recuperaSenha', {
          templateUrl: './app/templates/recuperaSenha.html',
-         // controller: 'recuperaSenhaCtrl'
+         controller: 'passRecCtrl'
 
       })
    var config = {
