@@ -251,3 +251,6 @@ IMG.displayed {
   margin-left: auto;
   margin-right: auto;
 }
+.alertText {
+  color: #ff0000;
+}

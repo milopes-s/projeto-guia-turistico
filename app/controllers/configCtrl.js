@@ -14,5 +14,8 @@ function configCtrl($scope, authService, $location) {
       password: ''
    }
 
+   vm.test = function () {
+      alert(auth.dataAll())
+   }
 
 }
