@@ -7,8 +7,8 @@
             <h1>Login</h1>
             <input type="email" placeholder="E-mail" id="email" ng-model="user.email" />
             <input type="password" placeholder="Senha" id="password" ng-model="user.password" />
+            <button type="submit" ng-click="login()" id="btn">Login</button>
          </form>
-         <button type="button" ng-click="login()" id="btn">Login</button>
          <p class="message">Não tem cadastro? <a href="#!cadastro">Cadastre-se</a></p>
          <p class="message"><a href="#!recuperaSenha">Esqueci a senha!</a></p>
       </div>

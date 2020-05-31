@@ -15,9 +15,9 @@ function passRecCtrl($scope, authService) {
 
    vm.enviaEmail = function () {
       auth.passReset(user).then(function () {
-         console.log("Email Enviado")
+         alert("Foi enviado um E-mail para " + user.email)
       }).catch(function () {
-         console.log("Se fodeu")
+         alert('Ops algo estranho aconteceu, verifique o email e tente novamente!')
       })
    }
 
