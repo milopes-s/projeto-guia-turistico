@@ -26,11 +26,11 @@ function cadCtrl($scope, authService) {
          //Cadastro no Firebase
          auth.register(user)
             .then(function (firebaseUser) {
-               alert('Bem vindo ' + firebaseUser.user.email);
+               alert('Bem vindo ' + firebaseUser.user.email + "!");
 
             }).catch(function (error) {
-               alert('Você deve preencher todos os campos!')
-               console.log('Error ' + error)
+               alert(error)
+
             })
 
          //Cadastro no Mongodb

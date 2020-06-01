@@ -3,11 +3,22 @@ var guia = angular.module("guia");
 
 guia.controller('homeCtrl', homeCtrl);
 
-homeCtrl.$inject = ['$scope', 'NgMap'];
+homeCtrl.$inject = ['$scope', 'NgMap', 'authService'];
 
-function homeCtrl($scope, NgMap, map) {
+function homeCtrl($scope, NgMap, authService) {
     var vm = $scope;
-    
+    var auth = authService;
+
+    //Mostra usuário logado
+    vm.isLogged = function () {
+        console.log(auth.isLoggedIn())
+    }
+    //Faz logout no firebase
+    vm.logout = function () {
+        auth.logout()
+    }
+
+
     //Autocomplete
 
     $scope.user = { 'from': '', 'fromLat': '', 'fromLng': '' };
@@ -25,7 +36,7 @@ function homeCtrl($scope, NgMap, map) {
 
     //Implementa Mapa 
 
-    NgMap.getMap().then(function(map) {
+    NgMap.getMap().then(function (map) {
         $scope.map = map;
     });
     $scope.cities = [
@@ -35,10 +46,10 @@ function homeCtrl($scope, NgMap, map) {
         { id: 4, name: 'Berlin', pos: [52.521248, 13.399038] },
         { id: 5, name: 'Paris', pos: [48.856127, 2.346525] }
     ];
-    $scope.showCity = function(event, city) {
+    $scope.showCity = function (event, city) {
         $scope.selectedCity = city;
         $scope.map.showInfoWindow('myInfoWindow', this);
         $scope.map.getBounds().contains(marker.getPosition());
     };
-  
+
 };
