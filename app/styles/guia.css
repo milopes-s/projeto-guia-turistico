@@ -255,3 +255,20 @@ IMG.displayed {
 .alertText {
   color: #ff0000;
 }
+
+form.form-inline{
+  width: 310px;
+  height: 77px;
+}
+
+.image{
+  filter:invert(0%);
+}
+.image:hover{
+  filter:invert(100%);
+}
+
+button.btn.btn {
+  width: 50px;
+  height: 37px;
+}
