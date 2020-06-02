@@ -7,8 +7,9 @@
             <h1>Cadastro</h1>
             <input type="name" placeholder="Nome" id="name" ng-model="user.name" />
             <input type="email" placeholder="E-mail" id="email" ng-model="user.email" />
-            <input type="password" placeholder="Senha" id="password" ng-model="user.password1" />
-            <input type="password" placeholder="Confirme a Senha" id="confirmpassword" ng-model="user.password2" />
+            <input type="password" placeholder="Senha (6 D?gitos)" id="password" ng-model="user.password1" />
+            <input type="password" placeholder="Confirme a Senha (6 D?gitos)" id="confirmpassword"
+               ng-model="user.password2" />
          </form>
          <button ng-click="cadastro()">Cadastrar</button>
          <p class="message">Já Possui Cadastro? <a href="#!login">Login</a></p>

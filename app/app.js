@@ -1,24 +1,21 @@
-
-// (function () {
-//    'use strict';
-
 var guia = angular.module('guia', [
    'ngRoute',
    'firebase',
    'authService',
-   // 'googleService'
+   'ngMap'
 ]);
 
+//Rotas
 guia.config(['$routeProvider', function ($routeProvider) {
    $routeProvider
-      .when('/', {
-         templateUrl: './app/templates/home.html',
-         controller: 'homeCtrl'
-
-      })
       .when('/login', {
          templateUrl: './app/templates/login.html',
          controller: 'loginCtrl'
+
+      })
+      .when('/feed', {
+         templateUrl: './app/templates/home.html',
+         controller: 'homeCtrl'
 
       })
       .when('/cadastro', {
@@ -26,16 +23,21 @@ guia.config(['$routeProvider', function ($routeProvider) {
          controller: 'cadCtrl'
 
       })
+      //configs
       .when('/config', {
-         templateUrl: './app/templates/cadastro.html',
+         templateUrl: './app/templates/config.html',
          controller: 'configCtrl'
 
       })
       .when('/recuperaSenha', {
          templateUrl: './app/templates/recuperaSenha.html',
-         // controller: 'recuperaSenhaCtrl'
+         controller: 'passRecCtrl'
 
       })
+      .otherwise({ redirectTo: '/login' })
+
+   //Validação de rotas
+
    var config = {
       apiKey: "AIzaSyDdfTXZ5gjOVAvv1g_JBUPI7kdE_ZWPUGM",
       authDomain: "guiavirtual-2fc2c.firebaseapp.com",
