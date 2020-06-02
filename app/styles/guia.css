@@ -1,0 +1,274 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.login {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.formFun {
+  position: relative;
+  background: #ffffff;
+  max-width: 800px;
+  margin: auto;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: left;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form ul {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: rgb(144, 26, 255);
+  width: 30%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: rgb(89, 103, 255);
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+  text-align: center;
+}
+.form .message a {
+  color: rgb(132, 0, 255);
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: rgb(89, 103, 255);
+}
+body {
+  background: rgb(193, 145, 238);
+  background: -webkit-linear-gradient(right, rgb(0, 7, 82), rgb(109, 119, 255));
+  background: -moz-linear-gradient(right, rgb(0, 7, 82), rgb(109, 119, 255));
+  background: -o-linear-gradient(right, rgb(0, 7, 82), rgb(109, 119, 255));
+  background: linear-gradient(to left rgb(0, 7, 82), rgb(109, 119, 255));
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: rgb(89, 103, 255);
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #424242;
+  font-size: 12px;
+}
+.form .message a {
+  color: rgb(0, 0, 0);
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: rgb(89, 103, 255);
+}
+
+#menu ul {
+  padding: 10px;
+  margin: 0px;
+  float: left;
+  width: 98%;
+  background-color: black;
+  list-style: none;
+  font: 99% Tahoma;
+}
+
+#menu ul li {
+  display: inline;
+}
+
+#menu ul li a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid #ededed;
+  padding: 2px 30px;
+  float: left;
+}
+
+#menu ul li a:hover {
+  background-color: rgb(89, 103, 255);
+  color: none;
+  border-bottom: 3px solid rgb(170, 80, 255);
+}
+
+center {
+  background-color: black;
+  color: white;
+  text-shadow: 3px 2px 2px black;
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Caladea", serif;
+  font-family: "Gentium Basic", serif;
+  font-family: "Spartan", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+h2 {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Caladea", serif;
+  font-family: "Gentium Basic", serif;
+  font-family: "Spartan", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+h6 {
+  text-align: center;
+  font-size: 10px;
+  font-family: "Caladea", serif;
+  font-family: "Gentium Basic", serif;
+  font-family: "Spartan", sans-serif;
+  font-family: "Lato", sans-serif;
+}
+
+IMG.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.alertText {
+  color: #ff0000;
+}
+
+form.form-inline{
+  width: 310px;
+  height: 77px;
+}
+
+.image{
+  filter:invert(0%);
+}
+.image:hover{
+  filter:invert(100%);
+}
+
+button.btn.btn {
+  width: 50px;
+  height: 37px;
+}
