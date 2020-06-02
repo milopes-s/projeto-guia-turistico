@@ -19,7 +19,7 @@ function loginCtrl($scope, authService, $location) {
          .then(function (firebaseUser) {
             alert('Bem vindo ' + firebaseUser.user.email);
 
-            window.location.replace('#/home')
+            window.location.replace('#!feed')
          })
          .catch(function (error) {
 
