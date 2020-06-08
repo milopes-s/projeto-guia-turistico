@@ -34,6 +34,11 @@ guia.config(['$routeProvider', function ($routeProvider) {
          controller: 'passRecCtrl'
 
       })
+      .when('/config/security', {
+         templateUrl: './app/templates/configSecurity.html',
+         controller: 'configCtrl'
+
+      })
       .otherwise({ redirectTo: '/login' })
 
    //Validação de rotas
