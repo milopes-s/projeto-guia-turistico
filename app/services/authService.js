@@ -12,7 +12,9 @@ angular.module('authService', ['ngRoute', 'firebase'])
             login: login,
             logout: logout,
             isLoggedIn: isLoggedIn,
-            passReset: passReset
+            passReset: passReset,
+            deleteUser: deleteUser,
+            updateProfile: updateProfile
          };
 
          return service;
@@ -35,6 +37,28 @@ angular.module('authService', ['ngRoute', 'firebase'])
             var emailAdress = user.email
 
             return auth.sendPasswordResetEmail(emailAdress)
+         }
+         function deleteUser() {
+            var user = firebase.auth().currentUser;
+
+            user.delete().then(function () {
+               alert('Conta excluída com sucesso!')
+               window.location.replace('#!login')
+            }).catch(function (error) {
+               alert('Ops, algo deu errado!')
+            });
+         }
+         function updateProfile(user) {
+            var userAtl = firebase.auth().currentUser;
+
+            userAtl.updateProfile({
+               displayName: user.name,
+               photoURL: "https://example.com/jane-q-user/profile.jpg"
+            }).then(function () {
+               console.log('Deu bom caralhooo')
+            }).catch(function (error) {
+               console.log('Caralhooo')
+            });
          }
 
       })

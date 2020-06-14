@@ -1,4 +1,4 @@
-<div class="breadcrumb flex-column">
+<div class="breadcrumb flex-column" ng-init="buscaDados()">
    <ul class="nav nav-tabs">
       <li class="nav-item">
          <a class="nav-link active" href="#!feed">Home</a>
@@ -10,29 +10,26 @@
          <a class="nav-link active" href="#!config/security">Segurança</a>
       </li>
    </ul>
+   <img src="./assets/igm1.png" alt="" srcset="" ng-if="user.email != null || undefined">
 
-   <button ng-click="buscaDados()" class="btn btn-warning w-25">Carrega Dados</button>
-   <!-- <p>{{user.email}}</p> -->
-   <img src="./assets/profilePic.png" alt="" srcset="" ng-if="user.emailVerified == true">
+   <label for="staticEmail" class="col-sm-2 col-form-label">
+      <strong>
+         Nome de Usuário:
+      </strong>
+   </label>
+   <div class="col-sm-10">
+      <input ng-if="alterarBtn != true" readonly type="text" class="form-control-plaintext w-auto " id="staticEmail"
+         value="{{user.name}}" placeholder="Não Definido">
+      <input type="email" class="form-control w-auto mt-3" id="newEmail" placeholder="Nome Usuário"
+         ng-if="alterarBtn== true" value="{{user.name}}">
+      <p>{{user.name}}</p>
+      <button id="alterarBtn" class="btn btn-primary w-auto mt-2" ng-click="alterarBtn = true">
+         Alterar
+      </button>
+      <button id="salvaBtn" class="btn btn-primary w-auto mt-2" ng-click="alteraDados()" ng-if="alterarBtn != true">
+         Salvar Alterações
+      </button>
 
-   <form>
-      <div class="form-group column">
-         <label for="staticEmail" class="col-sm-2 col-form-label"><strong>Email Atual:</strong></label>
-         <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{user.email}}">
-            <button id="alterarEmail" class="btn btn-primary w-25" ng-click="aterarEmail = true">Alterar Email</button>
-            <input type="email" class="form-control" id="newEmail" placeholder="Novo Email" ng-if="aterarEmail== true">
-            <button id="salvaEmail" class="btn btn-primary w-25" ng-click="test()" ng-if="aterarEmail== true">Salvar
-               Alterações</button>
 
-         </div>
-      </div>
-      <!-- <div class="form-group row">
-         <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
-         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
-         </div>
-      </div> -->
-   </form>
 
-</div>
+   </div>

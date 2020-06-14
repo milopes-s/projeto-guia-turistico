@@ -250,22 +250,21 @@ IMG.displayed {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 .alertText {
   color: #ff0000;
 }
 
-form.form-inline{
+form.form-inline {
   width: 310px;
   height: 77px;
 }
 
-.image{
-  filter:invert(0%);
+.image {
+  filter: invert(0%);
 }
-.image:hover{
-  filter:invert(100%);
+.image:hover {
+  filter: invert(100%);
 }
 
 button.btn.btn {
