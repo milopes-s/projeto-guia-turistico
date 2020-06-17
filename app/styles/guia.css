@@ -271,3 +271,6 @@ button.btn.btn {
   width: 50px;
   height: 37px;
 }
+.profilePic:hover {
+  opacity: 0.5;
+}

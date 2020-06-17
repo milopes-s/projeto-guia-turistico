@@ -10,7 +10,10 @@
          <a class="nav-link active" href="#!config/security">Segurança</a>
       </li>
    </ul>
-   <img src="./assets/igm1.png" alt="" srcset="" ng-if="user.email != null || undefined">
+
+   <div class="profilePic m-auto">
+      <img src="./assets/profilePlaceholder.jpg" class="w-25" alt="" srcset="" ng-if="user.email != null || undefined">
+   </div>
 
    <label for="staticEmail" class="col-sm-2 col-form-label">
       <strong>
@@ -21,12 +24,12 @@
       <input ng-if="alterarBtn != true" readonly type="text" class="form-control-plaintext w-auto " id="staticEmail"
          value="{{user.name}}" placeholder="Não Definido">
       <input type="email" class="form-control w-auto mt-3" id="newEmail" placeholder="Nome Usuário"
-         ng-if="alterarBtn== true" value="{{user.name}}">
-      <p>{{user.name}}</p>
+         ng-if="alterarBtn== true" ng-bind="{{user.email}}">
+      <p>{{user.email}}</p>
       <button id="alterarBtn" class="btn btn-primary w-auto mt-2" ng-click="alterarBtn = true">
          Alterar
       </button>
-      <button id="salvaBtn" class="btn btn-primary w-auto mt-2" ng-click="alteraDados()" ng-if="alterarBtn != true">
+      <button id="salvaBtn" class="btn btn-primary w-auto mt-2" ng-click="alteraDados()" ng-if="alterarBtn == true">
          Salvar Alterações
       </button>
 
