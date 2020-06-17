@@ -1,2 +1,6 @@
 # projeto-guia-turistico
-Projeto web usando a API do Google places como exemplo para criar um Guia turístico.
+
+Front End desenvolvido com AngularJs | Firebase | Google Places API | Bootstrap | Grunt.
+
+Init development Server:
+ grunt

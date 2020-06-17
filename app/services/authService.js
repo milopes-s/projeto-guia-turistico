@@ -12,8 +12,7 @@ angular.module('authService', ['ngRoute', 'firebase'])
             login: login,
             logout: logout,
             isLoggedIn: isLoggedIn,
-            passReset: passReset,
-            dataAll: dataAll
+            passReset: passReset
          };
 
          return service;
@@ -36,21 +35,6 @@ angular.module('authService', ['ngRoute', 'firebase'])
             var emailAdress = user.email
 
             return auth.sendPasswordResetEmail(emailAdress)
-         }
-         // Config Controller
-         function dataAll(user) {
-            var user = firebase.auth().currentUser;
-            var name, email, photoUrl, uid, emailVerified;
-
-            if (user != null) {
-               name = user.displayName;
-               email = user.email;
-               photoUrl = user.photoURL;
-               emailVerified = user.emailVerified;
-               uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-               // this value to authenticate with your backend server, if
-               // you have one. Use User.getToken() instead.
-            }
          }
 
       })
