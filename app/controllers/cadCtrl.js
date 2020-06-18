@@ -28,6 +28,8 @@ function cadCtrl($scope, authService) {
             .then(function (firebaseUser) {
                alert('Bem vindo ' + firebaseUser.user.email + "!");
 
+               window.location.replace('#!feed')
+
             }).catch(function (error) {
                alert(error)
 
