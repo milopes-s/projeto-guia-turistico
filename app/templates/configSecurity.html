@@ -1,4 +1,4 @@
-<div class="breadcrumb flex-column">
+<div class="breadcrumb flex-column" ng-init="buscaDados()">
    <ul class="nav nav-tabs">
       <li class="nav-item">
          <a class="nav-link active" href="#!feed">Home</a>
@@ -10,7 +10,45 @@
          <a class="nav-link disabled" href="#!config/security">Segurança</a>
       </li>
    </ul>
-   <button ng-click="buscaDados()">Mostra e-mail teste</button>
-   <p>{{user.email}}</p>
+
+   <hr>
+
+   <form>
+      <div class="form-group column">
+         <!-- Altera Email -->
+         <label for="staticEmail" class="col-sm-2 col-form-label">
+            <strong>
+               Email Atual:
+            </strong>
+         </label>
+         <div class="col-sm-10">
+            <input ng-if="alterarEmail != true" readonly type="text" class="form-control-plaintext w-auto "
+               id="staticEmail" value="{{user.email}}">
+            <input type="email" class="form-control w-auto mt-3" id="newEmail" placeholder="Novo Email"
+               ng-if="alterarEmail== true" value="{{user.email}}">
+            <button id="alterarEmail" class="btn btn-primary w-auto mt-2" ng-click="alterarEmail = true">
+               Alterar Email
+            </button>
+
+            <!-- Altera Senha -->
+            <input readonly type="text" class="form-control-plaintext w-auto " id="staticPass" value="">
+            <button id="alterarSenha" class="btn btn-primary w-auto" ng-click="alterarSenha()">
+               Alterar Senha
+            </button>
+            <div class="alert alert-info mt-3" id="newPass">
+               Um e-mail de redefinição foi enviado para {{user.email}}!
+            </div>
+            <!-- Salva alterações feitas -->
+            <button id="salvaAlterações" class="btn btn-primary w-auto" ng-click="test()" ng-if="alterarEmail == true">
+               Salvar Alterações
+            </button>
+
+         </div>
+         <div class="col-sm-10 pb-1">
+            <button class="btn btn-danger w-auto mt-5" ng-click="excluiUsuario()">
+               Excluir Conta
+            </button>
+         </div>
+      </div>
+   </form>
 </div>
-<hr>
