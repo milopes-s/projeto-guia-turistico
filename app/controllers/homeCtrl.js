@@ -24,9 +24,9 @@ function homeCtrl($scope, NgMap, authService) {
 
     $scope.user = { 'from': '', 'fromLat': '', 'fromLng': '' };
     var options = {
-        componentRestrictions: { country: "in" }
+        componentRestrictions: { country: "br"}
     };
-    var inputFrom = document.getElementById('from');
+    var inputFrom = document.getElementById('txtEndereco');
     var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom, options);
     google.maps.event.addListener(autocompleteFrom, 'place_changed', function () {
         var place = autocompleteFrom.getPlace();
@@ -132,18 +132,14 @@ $(document).ready(function () {
 
     /* chamada dessa função no evento click do botão “Mostrar no mapa” e no evento blur do campo endereço...
     Não sei o que é esse evento blur, mas é o que estava no site Kkk */
-
     $("#btnEndereco").click(function() {
         if($(this).val() != "")
             carregarNoMapa($("#txtEndereco").val());
     })
- 
     $("#txtEndereco").blur(function() {
         if($(this).val() != "")
             carregarNoMapa($(this).val());
     })
-
-
 
     /* mexer no marcador e atualizar o endereço */
     google.maps.event.addListener(marker, 'drag', function () {
@@ -157,28 +153,5 @@ $(document).ready(function () {
             }
         });
     });
-
-    /*Autocomplete */
-    $("#txtEndereco").autocomplete({
-        source: function (request, response) {
-            geocoder.geocode({ 'address': request.term + ', Brasil', 'region': 'BR' }, function (results, status) {
-                response($.map(results, function (item) {
-                    return {
-                        label: item.formatted_address,
-                        value: item.formatted_address,
-                        latitude: item.geometry.location.lat(),
-                        longitude: item.geometry.location.lng()
-                    }
-                }));
-            })
-        },
-        select: function (event, ui) {
-            $("#txtLatitude").val(ui.item.latitude);
-            $("#txtLongitude").val(ui.item.longitude);
-            var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
-            marker.setPosition(location);
-            map.setCenter(location);
-            map.setZoom(10);
-        }
-    });
+    
 });
