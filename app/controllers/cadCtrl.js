@@ -3,17 +3,19 @@ var guia = angular.module("guia");
 
 guia.controller('cadCtrl', cadCtrl);
 
-cadCtrl.$inject = ['$scope', 'authService'];
+cadCtrl.$inject = ['$scope', 'authService', '$http'];
 
-function cadCtrl($scope, authService) {
+function cadCtrl($scope, authService, $http) {
    var vm = $scope;
    var auth = authService;
+   var HOST_HTTP = 'https://turismo-api-v1.herokuapp.com/';
 
    var user = $scope.user = {
       name: '',
       email: '',
       password1: '',
       password2: ''
+      // photoUrl: './assets/profilePlaceholder.jpg'
    }
 
 
@@ -25,18 +27,23 @@ function cadCtrl($scope, authService) {
 
          //Cadastro no Firebase
          auth.register(user)
-            .then(function (firebaseUser) {
-               alert('Bem vindo ' + firebaseUser.user.email + "!");
-
+            .then(function () {
+               alert('Bem vindo ' + user.name + "!");
+               //Cadastro no Mongodb
+               $http.post(HOST_HTTP + 'usuario/cadastrar', user).then(
+                  function (response) {
+                     console.log(response)
+                  },
+                  function (err) {
+                     console.log(err);
+                  }
+               )
                window.location.replace('#!feed')
 
             }).catch(function (error) {
                alert(error)
 
             })
-
-         //Cadastro no Mongodb
-
 
       } else {
          alert('As senhas não coincidem!')
