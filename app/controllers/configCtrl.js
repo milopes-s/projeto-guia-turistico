@@ -38,8 +38,8 @@ function configCtrl($scope, authService, $timeout, $http) {
       }, 112)
    }
    vm.alteraDados = function () {
-
-      auth.updateProfile(user);
+      // usar ng-repeat 
+      auth.updateProfile(user.name);
    }
    vm.excluiUsuario = function () {
       auth.deleteUser();

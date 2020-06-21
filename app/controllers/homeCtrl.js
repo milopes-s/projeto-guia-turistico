@@ -10,6 +10,14 @@ function homeCtrl($scope, NgMap, authService) {
     var vm = $scope;
     var auth = authService;
 
+    var latitude = 0;
+    var longitude = 0;
+
+
+    vm.test1 = function () {
+        console.log(latitude, longitude)
+
+    }
     //Mostra usuário logado
     vm.isLogged = function () {
         console.log(auth.isLoggedIn())
@@ -62,7 +70,7 @@ function homeCtrl($scope, NgMap, authService) {
         var options = {
             zoom: 5,
             center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.satellite
         };
 
         map = new google.maps.Map(document.getElementById("mapa"), options);
@@ -86,8 +94,8 @@ function homeCtrl($scope, NgMap, authService) {
             geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
-                        var latitude = results[0].geometry.location.lat();
-                        var longitude = results[0].geometry.location.lng();
+                        latitude = results[0].geometry.location.lat();
+                        longitude = results[0].geometry.location.lng();
 
                         $('#txtEndereco').val(results[0].formatted_address);
                         $('#txtLatitude').val(latitude);
@@ -114,19 +122,20 @@ function homeCtrl($scope, NgMap, authService) {
         })
 
         /* mexer no marcador e atualizar o endereço */
-        // google.maps.event.addListener(marker, 'drag', function () {
-        //     geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
-        //         if (status == google.maps.GeocoderStatus.OK) {
-        //             if (results[0]) {
-        //                 $('#txtEndereco').val(results[0].formatted_address);
-        //                 $('#txtLatitude').val(marker.getPosition().lat());
-        //                 $('#txtLongitude').val(marker.getPosition().lng());
-        //             }
-        //         }
-        //     });
-        // });
+        google.maps.event.addListener(marker, 'drag', function () {
+            geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        $('#txtEndereco').val(results[0].formatted_address);
+                        $('#txtLatitude').val(marker.getPosition().lat());
+                        $('#txtLongitude').val(marker.getPosition().lng());
+                    }
+                }
+            });
+        });
 
     });
+
 };
 
 
