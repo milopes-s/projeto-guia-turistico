@@ -18,7 +18,7 @@
         <input id="txtEndereco" name="txtEndereco" ng-model="user.from" class="form-control mr-sm-2 ng-pristine ng-valid
         autocomplete=" type="search" placeholder="Buscar um local" aria-label="Search">
 
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="button">
           <span class="glyphicon glyphicon-search"></span>
           <img class="image" style="text-align: center;" id="imgLupa" src="../../assets/lupa.png" width="25"
             height="25">
@@ -26,10 +26,14 @@
 
       </form>
       <!-- Imagem do Centro home -->
-      <img class="displayed" style="text-align: center;" id="img" src="../../assets/img3.png" width="100" height="100">
+      <img class="imgCenter m-auto" style="text-align: center;" id="img" src="../../assets/img3.png" width="100"
+        height="100">
 
-      <ul class="navbar-nav mr-auto">
-        <!-- Sair -->
+      <ul class="navbar-nav ml-lg-5">
+        <!-- Minha conta -->
+        <li class="nav-item configuracao">
+          <a class="nav-link" href="#!config">Minha Conta |<span class="sr-only">(current)</span></a>
+          <!-- Sair -->
         <li class="nav-item sair">
           <a class="nav-link sair-toggle" href="#!login" ng-click="logout()" id="navbarSair" role="button"
             data-toggle="sair" aria-haspopup="true" aria-expanded="false">
@@ -37,14 +41,10 @@
           </a>
         </li>
 
-        <!-- Minha conta -->
-        <li class="nav-item configuracao">
-          <a class="nav-link" href="#!config">| Minha Conta<span class="sr-only">(current)</span></a>
-
-          <!-- Foto de perfil -->
+        <!-- Foto de perfil -->
         <li class="nav-item configuracao">
           <a class="nav-link" href="#!config">
-            <img src="../../assets/profilePic.png" alt="Profile Pic"><span class="sr-only">(current)</span></a>
+            <img src="./assets/profilePlaceholder1.jpg" alt="Profile Pic"><span class="sr-only">(current)</span></a>
 
       </ul>
     </div>
@@ -58,5 +58,5 @@
       <input type="hidden" id="txtLongitude" name="txtLongitude" />
     </fieldset>
   </form>
-
+  <button ng-click="test1()">Teste</button>
 </div>
