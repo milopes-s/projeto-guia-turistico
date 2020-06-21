@@ -11,9 +11,10 @@
       </li>
    </ul>
 
-   <img class="profilePic w-25" alt="" src="./assets/profilePlaceholder.jpg" ng-if="user.email != null || undefined">
-   <button class="w-25">Alterar Foto</button>
-
+   <img class="profilePic w-25 circle" alt="" src="./assets/profilePlaceholder.jpg"
+      ng-if="user.email != null || undefined">
+   <button class="w-25" ng-click="alterarFoto = true">Alterar Foto</button>
+   <input ng-if="alterarFoto == true" type="file" name="" id="">
 
    <label for="staticEmail" class="col-sm-2 col-form-label">
       <strong>
@@ -21,14 +22,10 @@
       </strong>
    </label>
    <div class="col-sm-10">
-      <input ng-if="alterarBtn != true" readonly type="text" class="form-control-plaintext w-auto " id="staticEmail"
-         value="{{user.name}}" placeholder="Não Definido">
+
       <input type="text" class="form-control w-auto mt-3" id="newEmail" placeholder="Nome Usuário"
-         ng-if="alterarBtn == true" ng-bind="{{user.name}}">
-      <button id="alterarBtn" class="btn btn-primary w-auto mt-2" ng-click="alterarBtn = true ">
-         Alterar
-      </button>
-      <button id="salvaBtn" class="btn btn-primary w-auto mt-2" ng-click="alteraDados()" ng-if="alterarBtn == true">
+         ng-bind="{{user.name}}">
+      <button id="salvaBtn" class="btn btn-primary w-auto mt-2" ng-click="alteraDados()">
          Salvar Alterações
       </button>
    </div>
