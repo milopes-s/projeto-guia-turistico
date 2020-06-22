@@ -21,6 +21,18 @@ function configCtrl($scope, authService, $timeout, $http) {
       emailVerified: ''
    }
 
+   // vm.buscaDadosUserr = function () {
+   //    $http.get(HOST_HTTP + '/produtos').then(
+   //       function (response) {
+   //          vm.produtos = response.data;
+   //       },
+   //       function (err) {
+   //          console.log(err)
+   //       }
+   //    );
+   // };
+
+
    vm.buscaDados = function () {
 
       $timeout(function () {
@@ -37,9 +49,10 @@ function configCtrl($scope, authService, $timeout, $http) {
          }
       }, 112)
    }
-   vm.alteraDados = function () {
-      // usar ng-repeat 
-      auth.updateProfile(user.name);
+   vm.alteraEmail = function () {
+      // usar ng-repeat
+
+      auth.updateProfile(user.email);
    }
    vm.excluiUsuario = function () {
       auth.deleteUser();
@@ -55,10 +68,7 @@ function configCtrl($scope, authService, $timeout, $http) {
    }
 
    vm.alterarSenha = function () {
-      let msgEnv = true;
 
       auth.passReset(user)
-
-
    }
 }
