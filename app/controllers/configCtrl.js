@@ -55,7 +55,10 @@ function configCtrl($scope, authService, $timeout, $http) {
    }
 
    vm.alterarSenha = function () {
+      let msgEnv = true;
 
       auth.passReset(user)
+
+
    }
 }
