@@ -3,11 +3,14 @@ var guia = angular.module("guia");
 
 guia.controller('configCtrl', configCtrl);
 
-configCtrl.$inject = ['$scope', 'authService', '$timeout'];
+configCtrl.$inject = ['$scope', 'authService', '$timeout', '$http'];
 
-function configCtrl($scope, authService, $timeout) {
+function configCtrl($scope, authService, $timeout, $http) {
    var vm = $scope;
    var auth = authService
+
+   var HOST_HTTP = 'https://turismo-api-v1.herokuapp.com/';
+
 
    var user = $scope.user = {
       name: '',
@@ -35,11 +38,20 @@ function configCtrl($scope, authService, $timeout) {
       }, 112)
    }
    vm.alteraDados = function () {
-
-      auth.updateProfile(user);
+      // usar ng-repeat 
+      auth.updateProfile(user.name);
    }
    vm.excluiUsuario = function () {
       auth.deleteUser();
+
+      $http.delete(HOST_HTTP + 'usuario/deletar/' + user.email).then(
+         function (response) {
+            console.log(response);
+         },
+         function (err) {
+            console.log(err);
+         }
+      );
    }
 
    vm.alterarSenha = function () {

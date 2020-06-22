@@ -2,7 +2,8 @@ var guia = angular.module('guia', [
    'ngRoute',
    'firebase',
    'authService',
-   'ngMap'
+   'ngMap',
+   'ngSanitize'
 ]);
 
 //Rotas

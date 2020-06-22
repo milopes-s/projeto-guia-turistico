@@ -274,3 +274,8 @@ button.btn.btn {
 .profilePic:hover {
   opacity: 0.5;
 }
+.imgCenter {
+}
+.circle {
+  border-radius: 8rem;
+}
