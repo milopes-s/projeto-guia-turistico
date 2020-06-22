@@ -26,7 +26,6 @@
                id="staticEmail" value="{{user.email}}">
             <input type="email" class="form-control w-auto mt-3" id="newEmail" placeholder="Novo Email"
                ng-if="alterarEmail== true" ng-model={{user.email}}>
-            <p>{{user.email}}</p>
             <button id="alterarEmail" class="btn btn-primary w-auto mt-2" ng-click="alterarEmail = true">
                Alterar Email
             </button>
