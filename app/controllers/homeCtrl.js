@@ -135,5 +135,4 @@ function homeCtrl($scope, NgMap, authService) {
         });
 
     });
-    /*********************   TESTE Ramon  ********************************** */
 };
