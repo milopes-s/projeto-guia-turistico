@@ -114,17 +114,17 @@ function homeCtrl($scope, NgMap, authService) {
         })
 
         /* mexer no marcador e atualizar o endereço */
-        // google.maps.event.addListener(marker, 'drag', function () {
-        //     geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
-        //         if (status == google.maps.GeocoderStatus.OK) {
-        //             if (results[0]) {
-        //                 $('#txtEndereco').val(results[0].formatted_address);
-        //                 $('#txtLatitude').val(marker.getPosition().lat());
-        //                 $('#txtLongitude').val(marker.getPosition().lng());
-        //             }
-        //         }
-        //     });
-        // });
+         google.maps.event.addListener(marker, 'drag', function () {
+             geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+                 if (status == google.maps.GeocoderStatus.OK) {
+                     if (results[0]) {
+                         $('#txtEndereco').val(results[0].formatted_address);
+                         $('#txtLatitude').val(marker.getPosition().lat());
+                         $('#txtLongitude').val(marker.getPosition().lng());
+                     }
+                 }
+             });
+         });
 
     });
 };
