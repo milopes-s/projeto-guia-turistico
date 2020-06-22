@@ -32,7 +32,7 @@ function homeCtrl($scope, NgMap, authService) {
 
     $scope.user = { 'from': '', 'fromLat': '', 'fromLng': '' };
     var options = {
-        componentRestrictions: { country: "br" }
+
     };
     var inputFrom = document.getElementById('txtEndereco');
     var autocompleteFrom = new google.maps.places.Autocomplete(inputFrom, options);
@@ -135,4 +135,10 @@ function homeCtrl($scope, NgMap, authService) {
         });
 
     });
+
+
+
+
+
+
 };
