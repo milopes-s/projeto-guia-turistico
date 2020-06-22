@@ -25,14 +25,16 @@
             <input ng-if="alterarEmail != true" readonly type="text" class="form-control-plaintext w-auto "
                id="staticEmail" value="{{user.email}}">
             <input type="email" class="form-control w-auto mt-3" id="newEmail" placeholder="Novo Email"
-               ng-if="alterarEmail== true" value="{{user.email}}">
+               ng-if="alterarEmail== true" ng-model={{user.email}}>
             <button id="alterarEmail" class="btn btn-primary w-auto mt-2" ng-click="alterarEmail = true">
                Alterar Email
             </button>
-            <button class="btn btn-primary w-auto mt-2" ng-if="alterarEmail == true">Salvar</button>
+            <button class="btn btn-success w-auto mt-2" ng-if="alterarEmail== true">
+               Salvar
+            </button>
 
             <!-- Altera Senha -->
-            <div class="mt-3" ng-click="msgEnv = true">
+            <div class="mt-3 w-25" ng-click="msgEnv = true">
                <button id="alterarSenha" class="btn btn-primary w-auto" ng-click="alterarSenha()">
                   Alterar Senha
                </button>
@@ -40,18 +42,15 @@
             <div class="alert alert-info mt-3" ng-if="msgEnv == true" id="newPass">
                Um e-mail de redefinição foi enviado para {{user.email}}!
             </div>
-            <!-- Salva alterações feitas -->
-            <!-- <button id="salvaAlterações" class="btn btn-primary w-auto mt-3" ng-click="test()"
-               ng-if="alterarEmail == true">
-               Salvar Alterações
-            </button> -->
+         </div>
+         <!-- Salva alterações feitas -->
 
-         </div>
-         <div class="col-sm-10 pb-1">
-            <button class="btn btn-danger w-auto mt-5" ng-click="excluiUsuario()">
-               Excluir Conta
-            </button>
-         </div>
       </div>
-   </form>
+      <div class="col-sm-10 pb-1">
+         <button class="btn btn-danger w-auto mt-5" ng-click="excluiUsuario()">
+            Excluir Conta
+         </button>
+      </div>
+</div>
+</form>
 </div>

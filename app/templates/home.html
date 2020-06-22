@@ -3,41 +3,41 @@
 <script type="text/javascript"
   src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCKzLuy2OuqRhpeFiNdjzrfi4tKmN9NRow&amp;sensor=false"></script>
 
-  <style>
-    
-    .tabela {
+<style>
+  .tabela {
     flex-direction: column;
     margin: auto;
     max-width: 450px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-      
+
     padding-right: 35px;
     background-color: #ecf2ff;
     color: #fff;
     font-family: arial;
     font-size: 15px;
-    }
-    .tabela ul {
+  }
+
+  .tabela ul {
     list-style-type: none;
-    }
-  
-    .tabela ul li {
+  }
+
+  .tabela ul li {
     color: black;
     margin-top: 7px;
     padding-bottom: 3px;
     border-bottom: 1px solid #266fc5;
-    }
-    h1{
+  }
+
+  h1 {
     font-size: 1em;
-    }
-
-    </style>
-
+  }
+</style>
 
 
-  <div>
+
+<div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <a class="navbar-brand" href="#"> </a>
@@ -45,10 +45,10 @@
       <input id="txtEndereco" name="txtEndereco" ng-model="user.from" class="form-control mr-sm-2 ng-pristine ng-valid
                       autocomplete=" type="search" placeholder="Digite para buscar locais" aria-label="Search">
 
-      <!-- <button class="btn btn-outline-primary my-2 my-sm-0" type="button">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="button">
         <span class="glyphicon glyphicon-search"></span>
         <img class="image" style="text-align: center;" id="imgLupa" src="../../assets/lupa.png" width="25" height="25">
-      </button> -->
+      </button>
 
     </form>
     <!-- Botão de responsividade -->
@@ -98,33 +98,34 @@
           <input type="hidden" id="txtLongitude" name="txtLongitude" />
         </fieldset>
       </form>
-    
+
     </div>
 
     <div class=”conteudo” style="float: center; color: aliceblue;">
 
-    <h1>Visitado por você rescentemente</h1>
+      <h1>Visitado por você recentemente</h1>
 
-    <div class="tabela">
-      <div>
-        <ul>
-          <li><h4>Lugar</h4></li>
-          <li>Orlando <br><img src="/assets/orlando.jpg" alt="" width="204" height="136"> </li>
-          <li>Italia <br><img src="/assets/Italia.png" alt="" width="204" height="134"> </li>
-          <li>Japão <br><img src="/assets/japao.jpg" alt="" width="204" height="136"> </li>
-        </ul>
+      <div class="tabela">
+        <div>
+          <ul>
+            <li>
+              <h4>Lugar</h4>
+            </li>
+            <li>Orlando <br><img src="/assets/orlando.jpg" alt="" width="204" height="136"> </li>
+            <li>Italia <br><img src="/assets/Italia.png" alt="" width="204" height="134"> </li>
+            <li>Japão <br><img src="/assets/japao.jpg" alt="" width="204" height="136"> </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4>Agencia de Turismo</h4>
+            </li>
+            <li><a href="https://platform.cvc.com.br/" target="_blank">CVC</a> - Orlando</li>
+            <li><a href="https://www.decolar.com/" target="_blank">Decolar</a> - Italia</li>
+            <li><a href="https://www.bancorbras.com.br/" target="_blank">Bancorbrás</a> - Japão</li>
+          </ul>
+
+
+        </div>
       </div>
-      <div>
-        <ul>
-          <li><h4>Agencia de Turismo</h4></li>
-          <li><a href="https://platform.cvc.com.br/" target="_blank">CVC</a> - Orlando</li>
-          <li><a href="https://www.decolar.com/" target="_blank">Decolar</a> - Italia</li>
-          <li><a href="https://www.bancorbras.com.br/" target="_blank">Bancorbrás</a> - Japão</li>
-        </ul>
-     
-
-    </div>
-  </div>
-
-
-    

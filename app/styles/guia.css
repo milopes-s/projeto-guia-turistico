@@ -277,5 +277,8 @@ button.btn.btn {
 .imgCenter {
 }
 .circle {
-  border-radius: 8rem;
+  border-radius: 11rem;
+}
+.textoImg {
+  opacity: 1;
 }
